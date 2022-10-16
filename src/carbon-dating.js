@@ -23,13 +23,11 @@ function dateSample(sampleActivity) {
   }
 
   var activityNum = parseFloat(sampleActivity);
-
   
   //t = (ln(N0 / N)) / k
-  let k = 0.693 / HALF_LIFE_PERIOD;
-  
+  let k = 0.693 / HALF_LIFE_PERIOD;  
 
-  let time =(Math.log(MODERN_ACTIVITY  / activityNum))  / (0.693 / HALF_LIFE_PERIOD);
+  let time =(Math.log(MODERN_ACTIVITY  / activityNum))  / k;
 
   if (time < 0 || isNaN(time)) {
     return false;
